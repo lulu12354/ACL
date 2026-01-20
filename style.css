@@ -1,0 +1,307 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@800;900&display=swap');
+
+:root {
+    --fundo-principal: #0A0A0A;
+    --fundo-secundario: #1C1C1E;
+    --cor-destaque: #FF5722;
+    --brilho-destaque: rgba(255, 87, 34, 0.4);
+    --texto-titulo: #F5F5F7;
+    --texto-corpo: #A1A1A6;
+    --branco: #FFFFFF;
+
+    --fonte-titulos: 'Montserrat', sans-serif;
+    --fonte-corpo: 'Inter', sans-serif;
+
+    --transicao: 0.3s ease-in-out;
+    --arredondamento: 12px;
+}
+
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--fundo-principal);
+    color: var(--texto-corpo);
+    font-family: var(--fonte-corpo);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+header {
+    padding: 20px 0;
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--fonte-titulos);
+    color: var(--branco);
+    font-size: 1.5rem;
+    font-weight: 900;
+}
+
+.logo span { color: var(--cor-destaque); }
+
+.menu { display: flex; list-style: none; gap: 30px; align-items: center; }
+
+.menu a {
+    color: var(--texto-titulo);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.btn-menu {
+    background: var(--cor-destaque);
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* Imagem WebP com Fallback JPG e Overlay */
+    background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('../tipografia/imagem-menu.png');
+    background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('../tipografia/imagem-menu.webp');
+}
+
+h1 {
+    font-family: var(--fonte-titulos);
+    font-size: 4rem;
+    color: var(--texto-titulo);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.destaque { color: var(--cor-destaque); }
+
+.hero p { max-width: 600px; margin-bottom: 30px; font-size: 1.2rem; }
+
+.btn-principal {
+    background: var(--cor-destaque);
+    color: var(--branco);
+    padding: 15px 35px;
+    font-family: var(--fonte-titulos);
+    font-weight: 900;
+    text-transform: uppercase;
+    display: inline-block;
+    border-radius: var(--arredondamento);
+    transition: var(--transicao);
+    margin-right: 15px;
+}
+
+.btn-principal:hover {
+    box-shadow: 0 0 20px var(--brilho-destaque);
+    transform: translateY(-3px);
+}
+
+.btn-whatsapp {
+    background: #25D366;
+    color: var(--branco);
+    padding: 15px 35px;
+    font-family: var(--fonte-titulos);
+    font-weight: 900;
+    text-transform: uppercase;
+    display: inline-block;
+    border-radius: var(--arredondamento);
+    transition: var(--transicao);
+    text-decoration: none;
+}
+
+.btn-whatsapp:hover {
+    box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+    transform: translateY(-3px);
+}
+
+/* BARRA CONFIANÇA */
+.barra-confianca { background: var(--fundo-secundario); padding: 30px 0; border-bottom: 1px solid #333; }
+.barra-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); text-align: center; }
+.item-confianca { color: var(--texto-titulo); font-weight: 600; font-size: 0.9rem; }
+.item-confianca span { color: var(--cor-destaque); margin-right: 8px; }
+
+/* BENTO GRID PRODUTOS */
+.produtos { padding: 100px 20px; }
+.titulo-sessao { font-size: 2.5rem; margin-bottom: 50px; text-align: center; }
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 250px;
+    gap: 20px;
+}
+.servicos {
+    padding: 100px 20px;
+    background-color: var(--fundo-principal);
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card-servico {
+    background-color: var(--fundo-secundario);
+    padding: 40px;
+    border-radius: var(--arredondamento);
+    border: 1px solid #333;
+    transition: var(--transicao);
+    text-align: center;
+}
+
+.card-servico:hover {
+    border-color: var(--cor-destaque);
+    transform: translateY(-10px);
+}
+
+.icone-servico {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.card-servico h3 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+.card-servico p {
+    color: var(--texto-corpo);
+    font-size: 1rem;
+}
+
+.bento-item {
+    background-color: var(--fundo-secundario);
+    border-radius: var(--arredondamento);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transicao);
+    border: 1px solid #333;
+}
+
+.bento-item:hover { transform: scale(1.02); border-color: var(--cor-destaque); }
+
+.bento-item.grande { grid-column: span 2; grid-row: span 2; }
+.bento-item.largo { grid-column: span 2; }
+
+.overlay-produto {
+    position: absolute;
+    bottom: 0; width: 100%;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.9));
+}
+
+.overlay-produto h3 { font-size: 1.2rem; color: var(--branco); }
+
+/* FOOTER */
+footer { background: #050505; padding: 80px 0 20px; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+.copyright { text-align: center; margin-top: 50px; font-size: 0.8rem; border-top: 1px solid #222; padding-top: 20px; }
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    .bento-grid { grid-template-columns: 1fr; grid-auto-rows: 300px; }
+    .bento-item.grande, .bento-item.largo { grid-column: span 1; grid-row: span 1; }
+    .menu { display: none; } /* Ideal fazer um menu hamburguer aqui */
+}
+@media (max-width: 768px) {
+    /* Ocultamos o menu desktop e preparamos a 'gaveta' mobile */
+    .menu {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Totalmente fora da tela à direita */
+        width: 80%;   /* Largura do menu no celular */
+        height: 100vh;
+        background-color: var(--fundo-secundario);
+        display: flex !important; /* Força o flexbox para os links aparecerem */
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.5s all ease; /* Transição mais suave */
+        z-index: 999; /* Fica atrás apenas do botão X */
+        box-shadow: -10px 0 30px rgba(0,0,0,0.8);
+    }
+
+    /* ESSA É A CLASSE QUE O JS ATIVA */
+    .menu.ativo {
+        right: 0 !important; /* Puxa o menu para dentro da tela */
+    }
+
+    .menu li {
+        margin: 20px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu a {
+        font-size: 1.5rem; /* Aumenta o texto para facilitar o clique no dedo */
+        display: block;
+        width: 100%;
+    }
+
+    /* Botão Hamburguer */
+    .menu-toggle {
+        display: block;
+        z-index: 1000; /* Sempre acima da gaveta do menu */
+        cursor: pointer;
+    }
+}
+
+    /* Quando o menu estiver ativo, ele volta para a tela */
+    .menu.ativo {
+        right: 0;
+    }
+
+    .menu li {
+        margin: 25px 0;
+    }
+
+    /* Estilização do Ícone Hamburguer */
+    .menu-toggle {
+        display: none;
+        cursor: pointer;
+        z-index: 1000;
+    }
+
+    .menu-toggle .bar {
+        display: block;
+        width: 30px;
+        height: 3px;
+        margin: 6px auto;
+        background-color: var(--branco);
+        transition: var(--transicao);
+    }
+
+    /* Animação do X quando o menu abre */
+    #mobile-menu.is-active .bar:nth-child(2) { opacity: 0; }
+    #mobile-menu.is-active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    #mobile-menu.is-active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+    @media (max-width: 768px) {
+        .menu-toggle {
+            display: block;
+        }
+    }
